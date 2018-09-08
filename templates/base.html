@@ -1,0 +1,30 @@
+<!DOCTYPE html5>
+<html>
+<header>
+<title> {% block tittle %} this is tittle {% endblock %} </title>
+<style>
+{% block style %}
+body {font-size: 30px; color: darkblue; background: lightyellow;}
+footer {font-size: 20px; color: grey; }
+
+{% endblock %}
+</style>
+</header>
+
+
+<body>
+<div> {% block content %}
+    this is the main content
+    {% endblock %}
+</div>
+
+<footer>
+    {% block footer %}
+    @copyright 2018 by <a href="http://shiyanlou.com">shiyanlou</a>
+    {% endblock %}
+</footer>
+
+
+</body>
+
+</html>
