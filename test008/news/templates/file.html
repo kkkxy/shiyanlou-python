@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ file_item['title'] }}</h1>
+<div> <br>{{ file_item['create_time'] }}<br>{{ file_item['category'] }}<br> {{ file_item['content'] }} </div>
+<br>
+<div>{{ file_item['tags'] }}</div>
+<br>
+{% endblock %}
+
