@@ -1,0 +1,67 @@
+<!DOCTYPE html5>
+<html>
+<header>
+<!-- Bootstrap core CSS -->
+<link href="{{ url_for('static', filename="bootstrap-3.3.7-dist/css/bootstrap.min.css") }}" rel="stylesheet">
+<title> {% block tittle %} this is tittle {% endblock %} </title>
+<style>
+{% block style %}
+.fronttitle{text-align:center; font-size:50px; color: darkblue;}
+.content {text-align:center; font-size: 30px; color: darkblue; background: lightgreen;}
+footer {text-align:center; font-size: 15px; color: grey; }
+.nav {font-size: 20px; color: lightgrey;background:darkblue;}
+{% endblock %}
+</style>
+</header>
+
+
+<body>
+<div class="fronttitle">
+    Hello User!
+</div>
+
+<div>
+
+      <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+                            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+                              </ul>
+
+                                <!-- Tab panes -->
+                                  <div class="tab-content">
+                                          <div role="tabpanel" class="tab-pane active" id="home">...</div>
+                                              <div role="tabpanel" class="tab-pane" id="profile">...</div>
+                                                  <div role="tabpanel" class="tab-pane" id="messages">...</div>
+                                                      <div role="tabpanel" class="tab-pane" id="settings">...</div>
+                                                        </div>
+                                                    </div>
+
+
+
+ <div class="tab-content">
+       <div role="tabpanel" class="tab-pane fade in active" id="home">...</div>
+         <div role="tabpanel" class="tab-pane fade" id="profile">...</div>
+           <div role="tabpanel" class="tab-pane fade" id="messages">...</div>
+             <div role="tabpanel" class="tab-pane fade" id="settings">...</div>
+         </div>
+
+
+
+<div class="content"> {% block content %}
+    this is the main content
+    {% endblock %}
+</div>
+
+<footer>
+    {% block footer %}
+    @copyright 2018 by <a href="http://shiyanlou.com">shiyanlou</a>
+    {% endblock %}
+</footer>
+
+<script src="{{ url_for('static', filename="bootstrap-3.3.7-dist/js/bootstrap.min.js") }}"></script>
+</body>
+
+</html>

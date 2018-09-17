@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %} welcome to homepage {% endblock %}
+{% block content %} 
+
+
+{% for file in files %}
+<button type="button" class="btn btn-default" aria-label="Left Align">
+<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+</button>
+<li><a href="{{ url_for('file',file_id=file.id) }}"target="_blank">{{ file.title }}</a></li>
+<li>{{file['tags'] }}
+</li>
+{% endfor %}
+{% endblock %}
+
