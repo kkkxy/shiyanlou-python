@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 import scrapy
 
+#获取实验楼的所有 Github 仓库列表
 class ShiyanlouSpider(scrapy.Spider):
     name = 'shiyanlou-repositories'
 
@@ -12,6 +13,9 @@ class ShiyanlouSpider(scrapy.Spider):
     def parse(self, response):
         for repo in response.css('div#user-repositories-list ul li'):
             yield{
-                "name": repo.xpath('.//h3/a/text()').re_first('\n\s*(.*)'),
+                "name": repo.xpath('.//h3/a/text()').re_first('\n\s*(.*)'), #'\n\s*(.*)' 提取转行和空格后的文本
                 "update_time": repo.css('relative-time::attr(datetime)').extract_first()
                     }
+
+#安装scrapy： pip3 install scrapy
+#执行程序： scrapy runspider shiyanlou.py -o shiyanlougithub.json
