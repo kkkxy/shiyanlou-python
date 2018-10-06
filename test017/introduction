@@ -1,0 +1,25 @@
+准备
+首先需要将 MySQL 的编码格式设置为 utf8，编辑配置文件：
+sudo vim /etc/mysql/my.cnf
+添加以下几个配置：
+[client]
+default-character-set = utf8
+
+[mysqld]
+character-set-server = utf8
+
+[mysql]
+default-character-set = utf8
+保存后，就可以启动 mysql 了：
+
+本实验使用 SQLAlchemy 这个 ORM在爬虫程序中连接和操作 mysql
+
+pip3 install sqlalchemy
+还需要安装 Python3 连接 MySQL 的驱动程序 mysqlclient：
+
+sudo apt-get install libmysqlclient-dev
+pip3 install mysqlclient
+
+来源: 实验楼
+链接: https://www.shiyanlou.com/courses/1119
+本课程内容，由作者授权实验楼发布，未经允许，禁止转载、下载及非法传播
